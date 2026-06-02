@@ -1,0 +1,117 @@
+# Ignore files for Git
+
+## Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+## IDE & Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.project
+.classpath
+*.code-workspace
+
+## Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+## Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+## Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+## Plots and Outputs (Temporary)
+paper/figures/*.png
+paper/figures/*.pdf
+paper/figures/*.svg
+dashboard/data.json.bak
+
+## Node/NPM (if added in future)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+## OS Lock Files
+.lock
+*.lock
+
+## Temporary Files
+*.tmp
+*.temp
+*~.swp
+.#*
+
+## Build Outputs (Optional, if compiling documentation)
+*.dvi
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+## Distribution / Packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+## Sensitive Files (if added in future)
+.secrets
+*.key
+*.pem
+.env.local
+config.local.json
