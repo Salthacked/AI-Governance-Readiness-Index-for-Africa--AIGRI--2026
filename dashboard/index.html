@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIGRI | AI Governance Readiness Index for Africa</title>
+    <meta name="description" content="An academically rigorous, PCA-weighted indicator framework evaluating AI safety and governance readiness across 30 African countries.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="radial-bg"></div>
+
+    <header class="app-header">
+        <div class="header-logo">
+            <span class="logo-icon">▲</span>
+            <div class="logo-text">
+                <h1>AIGRI 2026</h1>
+                <p>AI Governance Readiness Index for Africa</p>
+            </div>
+        </div>
+        <nav class="header-nav">
+            <button id="btn-dashboard" class="nav-link active">Dashboard</button>
+            <button id="btn-econometrics" class="nav-link">Econometric Validation</button>
+            <button id="btn-methodology" class="nav-link">PCA Methodology</button>
+        </nav>
+    </header>
+
+    <main class="main-content" id="dashboard-section">
+        <!-- Sidebar: Rankings List -->
+        <aside class="sidebar-rankings glass-card">
+            <div class="sidebar-header">
+                <h2>Country Rankings</h2>
+                <span class="country-count" id="country-count">30 Countries</span>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search country or region...">
+                <div class="filter-controls">
+                    <select id="region-filter-select" class="filter-select">
+                        <option value="All">All Regions</option>
+                        <option value="North">North Africa</option>
+                        <option value="West">West Africa</option>
+                        <option value="East">East Africa</option>
+                        <option value="South">Southern Africa</option>
+                        <option value="Central">Central Africa</option>
+                    </select>
+                    <select id="sort-order-select" class="filter-select">
+                        <option value="rank-asc">Rank: High to Low</option>
+                        <option value="rank-desc">Rank: Low to High</option>
+                        <option value="name-asc">Name: A to Z</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rankings-list" id="rankings-container">
+                <!-- Country rank items will be inserted dynamically here -->
+            </div>
+        </aside>
+
+        <!-- Main Workspace: Country Profile Details -->
+        <section class="profile-details glass-card" id="profile-details-card">
+            <!-- Active Country Profile -->
+            <div id="active-profile-view">
+                <div class="profile-header">
+                    <div class="profile-title-area">
+                        <div class="rank-badge" id="active-rank">#0</div>
+                        <div>
+                            <h2 id="active-country-name">Select a Country</h2>
+                            <p class="region-label" id="active-region">Region: -</p>
+                        </div>
+                    </div>
+                    <span class="tier-badge" id="active-tier">-</span>
+                </div>
+
+                <!-- Scores Section -->
+                <div class="scores-grid">
+                    <div class="radar-container glass-card">
+                        <div class="radar-header-area">
+                            <h3>Pillar Comparison</h3>
+                            <select id="compare-country-select" class="compare-select">
+                                <option value="">Compare with...</option>
+                                <!-- Will be filled dynamically -->
+                            </select>
+                        </div>
+                        <div class="svg-radar-wrapper" id="radar-chart-container">
+                            <!-- Custom SVG Radar will render here -->
+                        </div>
+                    </div>
+
+                    <div class="pillar-bars glass-card">
+                        <h3>Detailed Pillar Scores</h3>
+                        
+                        <div class="bar-item">
+                            <div class="bar-labels">
+                                <span class="pillar-title">Pillar 1: Regulatory Safeguards</span>
+                                <span class="pillar-score" id="score-p1">0%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" id="fill-p1" style="width: 0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar-labels">
+                                <span class="pillar-title">Pillar 2: Enforcement Capacity</span>
+                                <span class="pillar-score" id="score-p2">0%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" id="fill-p2" style="width: 0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar-labels">
+                                <span class="pillar-title">Pillar 3: Infrastructure Sovereignty</span>
+                                <span class="pillar-score" id="score-p3">0%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" id="fill-p3" style="width: 0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="bar-item">
+                            <div class="bar-labels">
+                                <span class="pillar-title">Pillar 4: Talent & Civic Space</span>
+                                <span class="pillar-score" id="score-p4">0%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" id="fill-p4" style="width: 0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="index-score-box">
+                            <div class="index-score-item">
+                                <span class="index-label">PCA-Weighted Score</span>
+                                <span class="index-value" id="val-pca">0.0</span>
+                            </div>
+                            <div class="index-score-item">
+                                <span class="index-label">Equal-Weighted Score</span>
+                                <span class="index-value" id="val-ewi">0.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Policy Recommendations -->
+                <div class="recommendations-section glass-card">
+                    <div class="rec-header">
+                        <span class="warning-icon">⚡</span>
+                        <h3>Targeted Policy Recommendation</h3>
+                    </div>
+                    <div class="rec-pill" id="active-weakest-pillar-box">
+                        Weakest Dimension: <strong id="active-weakest-pillar">-</strong>
+                    </div>
+                    <p class="rec-text" id="active-policy-recommendation">
+                        Please select a country from the sidebar to view localized policy recommendations.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Econometrics Section -->
+    <main class="main-content full-width-layout hidden" id="econometrics-section">
+        <div class="validation-container">
+            <section class="glass-card full-width-card">
+                <h2>Econometric Validation & Robustness</h2>
+                <p class="subtitle">Validating the AI Governance Readiness Index (AIGRI) against macro-digital and economic indicators.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card glass-card">
+                        <h3>AI Adoption Index</h3>
+                        <p class="stat-method">Pearson Correlation</p>
+                        <p class="stat-number" id="corr-adoption-pearson">0.00</p>
+                        <p class="stat-method">Spearman Rank</p>
+                        <p class="stat-number color-secondary" id="corr-adoption-spearman">0.00</p>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <h3>ICT Development Index</h3>
+                        <p class="stat-method">Pearson Correlation</p>
+                        <p class="stat-number" id="corr-ict-pearson">0.00</p>
+                        <p class="stat-method">Spearman Rank</p>
+                        <p class="stat-number color-secondary" id="corr-ict-spearman">0.00</p>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <h3>AI Investment (USD Millions)</h3>
+                        <p class="stat-method">Pearson Correlation</p>
+                        <p class="stat-number" id="corr-investment-pearson">0.00</p>
+                        <p class="stat-method">Spearman Rank</p>
+                        <p class="stat-number color-secondary" id="corr-investment-spearman">0.00</p>
+                    </div>
+                </div>
+
+                <div class="regression-card glass-card" style="margin-bottom: 1.5rem;">
+                    <h3>Multivariate OLS Regression Model</h3>
+                    <p class="model-equation" id="regression-formula">
+                        AI_Adoption = \beta_0 + \beta_1 \cdot \text{AIGRI} + \beta_2 \cdot \log(\text{GDP\_Capita})
+                    </p>
+                    <div class="regression-explanation">
+                        <p><strong>Key Empirical Finding:</strong> The highly significant coefficient ($\beta_1$) confirms that AI regulatory safeguards, institutional oversight, computational infrastructure, and talent capacity are strongly and positively associated with commercial AI adoption, even when strictly controlling for national wealth (GDP per capita).</p>
+                    </div>
+                </div>
+
+                <div class="regression-card glass-card">
+                    <h3>Sensitivity Analysis & Weighting Robustness</h3>
+                    <p class="subtitle" style="margin-bottom: 1.5rem;">Evaluating index stability across alternative weighting designs (Equal Weighting vs. PCA vs. Infrastructure-Dropped).</p>
+                    <div class="stats-grid" style="margin-bottom: 1.5rem;">
+                        <div class="stat-card glass-card" style="padding: 1rem;">
+                            <h3>PCA vs. Equal (EWI)</h3>
+                            <p class="stat-method">Spearman Rank Correlation</p>
+                            <p class="stat-number" id="sens-pca-vs-ewi" style="font-size: 1.6rem;">0.0000</p>
+                        </div>
+                        <div class="stat-card glass-card" style="padding: 1rem;">
+                            <h3>PCA vs. Infra-Dropped</h3>
+                            <p class="stat-method">Spearman Rank Correlation</p>
+                            <p class="stat-number" id="sens-pca-vs-infra" style="font-size: 1.6rem;">0.0000</p>
+                        </div>
+                        <div class="stat-card glass-card" style="padding: 1rem;">
+                            <h3>EWI vs. Infra-Dropped</h3>
+                            <p class="stat-method">Spearman Rank Correlation</p>
+                            <p class="stat-number" id="sens-ewi-vs-infra" style="font-size: 1.6rem;">0.0000</p>
+                        </div>
+                    </div>
+                    <div class="regression-explanation">
+                        <p><strong>Clustering Stability:</strong> We find that only <strong id="sens-tier-changes-count" style="color: var(--color-primary);">0</strong> countries change their cluster tier (Pioneer, Emerging, Lagging) between the PCA and Equal Weighting schemes. This proves that our classification tiers are highly robust to weighting adjustments and reflect genuine differences in structural AI readiness.</p>
+                        <div id="sens-changes-detail-container" style="margin-top: 1.25rem; display: none;">
+                            <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary);">Tier Changes Detail:</p>
+                            <ul id="sens-changes-list" style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+                                <!-- Tier changes details will be filled dynamically -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Methodology Section -->
+    <main class="main-content full-width-layout hidden" id="methodology-section">
+        <div class="methodology-container">
+            <section class="glass-card full-width-card">
+                <h2>Index Weighting & PCA Methodology</h2>
+                <p class="subtitle">Adhering to OECD Guidelines for composite index construction, avoiding arbitrary weights.</p>
+                
+                <div class="method-layout">
+                    <div class="method-text glass-card">
+                        <h3>Why Principal Component Analysis (PCA)?</h3>
+                        <p>Standard readiness indices (e.g. Oxford Insights, Tortoise) often use subjective equal weighting. We apply PCA to the four standardized pillars to mathematically define weights based on their contribution to the total variance of the readiness dimensions.</p>
+                        <p>Our empirical model shows that the <strong>First Principal Component (PC1)</strong> explains <strong id="pca-variance-text">84.5%</strong> of the total variance across the 30 countries, proving that the index represents a highly cohesive socio-technical construct.</p>
+                    </div>
+                    <div class="weights-chart-box glass-card">
+                        <h3>Derived Pillar Weights</h3>
+                        <div class="weights-list" id="pca-weights-list">
+                            <!-- Custom Pillar weights rendering dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <p>© 2026 AI Governance Readiness Index for Africa. Powered by Antigravity AI.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

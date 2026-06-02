@@ -1,0 +1,31 @@
+country,region,data_protection,ai_strategy,cybercrime_law,malabo_ratification,dpa_active,ai_safety_body,standards_agency,ethical_review_process,local_datacenters,broadband_penetration,localized_nlp_resources,cybersecurity_index,ai_education_programs,digital_literacy,civic_space_index,gender_inclusion_stem
+Egypt,North,10,10,10,5,8,8,8,7,9,84.2,8,100.0,8,7,34,7
+South Africa,South,10,8,10,5,9,8,9,6,10,105.4,9,97.4,9,8,82,8
+Kenya,East,10,9,10,5,8,7,7,5,8,88.2,8,98.6,8,7,72,7
+Rwanda,East,10,10,10,10,9,9,8,7,7,78.5,7,93.5,7,7,42,9
+Nigeria,West,10,10,10,5,8,8,7,5,8,72.4,8,95.2,8,6,58,6
+Mauritius,East,10,10,10,10,10,8,8,6,8,95.2,6,100.0,7,8,85,8
+Tunisia,North,10,7,10,5,7,6,6,5,6,82.4,7,86.2,7,6,62,7
+Morocco,North,10,9,10,5,8,7,7,6,7,89.5,7,91.4,7,7,52,6
+Ghana,West,10,8,10,10,9,6,7,4,6,81.2,7,94.8,7,6,76,7
+Senegal,West,10,8,10,10,8,6,6,4,6,75.4,7,82.5,6,5,70,6
+Botswana,South,10,6,10,5,7,5,6,4,6,91.2,5,80.4,6,6,79,7
+Namibia,South,10,5,10,5,5,4,5,3,5,85.6,4,76.2,5,6,81,7
+Algeria,North,10,6,10,5,6,4,6,3,5,78.5,6,72.4,6,5,35,5
+Côte d'Ivoire,West,10,7,10,10,8,5,6,3,6,72.5,6,84.1,6,5,60,6
+Uganda,East,10,6,10,5,8,5,5,3,5,68.4,7,79.5,6,5,50,6
+Ethiopia,East,5,7,8,0,3,6,4,2,4,54.2,8,65.2,5,4,30,5
+Tanzania,East,10,5,10,5,7,4,5,3,5,66.8,6,74.2,5,4,58,6
+Zambia,South,10,6,10,10,7,4,5,3,5,69.5,5,70.8,5,5,64,6
+Zimbabwe,South,10,5,10,10,6,3,5,2,4,62.4,6,65.2,5,4,48,5
+Cameroon,Central,10,5,10,10,5,3,4,2,4,52.4,6,62.5,5,4,42,5
+Angola,Central,10,4,10,10,6,2,4,1,4,48.2,5,58.4,4,3,45,4
+Gabon,Central,10,4,10,5,6,2,4,1,4,60.5,4,61.2,4,4,52,5
+DR Congo,Central,5,3,6,0,3,1,3,1,3,34.2,6,42.4,3,3,38,4
+Cabo Verde,West,10,6,10,10,8,5,5,3,5,86.4,4,78.2,5,6,84,7
+Togo,West,10,7,10,10,7,4,5,3,4,59.8,5,74.5,5,4,60,6
+Benin,West,10,8,10,10,8,6,5,3,5,63.2,6,80.1,5,5,66,6
+Madagascar,East,5,3,8,0,3,2,3,1,3,39.5,5,45.2,4,3,55,4
+Mozambique,East,5,4,8,5,4,2,4,1,3,45.8,5,51.4,4,3,52,4
+Malawi,East,5,3,8,5,3,2,3,1,3,42.1,5,48.5,4,3,61,5
+Seychelles,East,10,6,10,5,8,4,6,3,6,92.4,3,78.6,5,7,85,7
